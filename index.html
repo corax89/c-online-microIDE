@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>
+		C Compiler
+	</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script language="Javascript" type="text/javascript" src="edit_area/edit_area_full.js"></script>
+	<script language="Javascript" type="text/javascript">
+		editAreaLoader.init({
+			id: "codebox" // id of the textarea to transform		
+				,
+			start_highlight: true // if start with highlight
+				,
+			allow_resize: "both",
+			word_wrap: true,
+			language: "ru",
+			syntax: "c"
+		});
+	</script>
+</head>
+
+<body>
+	<center>
+		<div id="panel">
+			<button id="compile" class="pbutton pbutton-big">
+                <img src="img/compile.png">собрать программу
+            </button>
+			<a href="#" id="link" class="pbutton  pbutton-big"><img src="img/load.png">скачать программу</a>
+			<div class="sep"></div>
+			<div class="minipanel">
+    			<select size="1" name="setcompiler" id="setcompiler" class="pbutton">
+                    <option selected value="0">Linux gcc</option>
+                    <option value="1">Windows mingw</option>
+                </select>
+                <select size="1" name="optimization" id="optimization" class="pbutton">
+                    <option selected value="0">без оптимизации</option>
+                    <option value="1">оптимизация скорости</option>
+                    <option value="1">оптимизация размера</option>
+                </select>
+                <span>настройки компилятора</span>
+            </div>
+            <div class="sep"></div>
+            <button id="hello" class="pbutton pbutton-big">
+                <img src="img/question.png">привет мир!
+            </button>
+		</div>
+		<textarea id="codebox" rows="28" cols="80" name="text_box" style="width:99%;">
+		</textarea>
+        <textarea id='output' rows='4' cols='80'></textarea>
+		<div id='out'>OUTPUT</div>
+	</center>
+	<script language="Javascript" type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
