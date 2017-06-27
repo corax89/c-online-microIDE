@@ -1,14 +1,15 @@
-body{
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
-textarea{
-    width: 99%;
-}
-
 #panel{
+    position: fixed;
+    left: 0;
+    top: 0;
     height: 90px;
+    width: 100%;
     min-width: 500px;
     padding: 5px;
     margin: 2px;
@@ -16,15 +17,15 @@ textarea{
     border-bottom: 1px solid #b6babf;
     background: #FFF;
     overflow: hidden;
-    text-align:left;
+    text-align: left;
     font-family: "Segoe UI" , Verdana, Tahoma, Helvetica, sans-serif;
     font-size: 14px;
-    color:black;
+    color: black;
 }
 
 #panel a{
     color: black;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 #panel select{
@@ -87,15 +88,97 @@ textarea{
 
 .pbutton-big>img{
     position: relative;
-    top:0;
+    top: 0;
 }
 
-#out{
-    position: relative;
+#wrapper{
+    position: fixed;
+    width: 100%;
+    top: 105px;
+    bottom: 140px;
+}
+
+#codebox{
+    height: 100%;
+}
+
+#output{
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    bottom: 0;
+    right: -8px;
+    border: none;
+    padding: 3px;
+}
+
+#output-text{
+    position: fixed;
     width: 100%;
     bottom: 1.2em;
     margin-bottom: -1em;
-    color: #BeEcB1;
+    color: #BEECB1;
+    opacity: 0.8;
     font-size: 2em;
     text-align: center;
+    pointer-events: none;
+}
+
+/*экран меньше ширины панели с кнопками*/
+@media screen and (max-width: 480px) {
+    #panel{
+        min-width: 340px;
+    }
+    
+    .minipanel{
+    	width: 106px;
+    }
+    
+    .sep{
+        margin: 0;
+    }
+    
+    .pbutton-big{
+	    width: 75px;
+    }
+}
+
+/*маленький экран*/
+@media screen and (max-height: 360px) {
+    #wrapper{ 
+        top: 60px;
+        bottom: 0;
+    }
+    /*фикс: codebox развернутый на весь экран убегает вверх*/
+    #frame_codebox{
+        top: 22px  !important;
+    }
+
+    #EditAreaArroundInfos_codebox{
+        display: none !important;
+    }
+    
+    #output{
+        width: 40%;
+        height: 50px;
+        pointer-events: none;
+        opacity: 0.6;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    
+    #output-text{
+       display:none;
+    }
+}
+
+/*маленький экран и открытая клавиатура*/
+@media screen and (max-height: 150px) {
+    #wrapper{ 
+        top: -23px;
+        bottom: -21px;
+    }
+    
+    #output{
+       display: none;
+    }
 }
