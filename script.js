@@ -3,6 +3,7 @@ var btnCompile   = document.getElementById('compile');
 var btnHello     = document.getElementById('hello');
 var setCompiler  = document.getElementById("setcompiler");
 var optimization = document.getElementById("optimization");
+var codePage    = document.getElementById("code_page");
 var programmLink = document.getElementById("link");
 
 btnCompile.addEventListener("click", sendToCompile);
@@ -10,7 +11,10 @@ btnHello.addEventListener("click", loadHello);
 
 function sendToCompile(){
     //собираем тело запроса
-    var body = 'setcompiler=' + encodeURIComponent(setCompiler.value) + '&optimization=' + encodeURIComponent(optimization.value) + '&text_box=' + encodeURIComponent(editAreaLoader.getValue("codebox"));
+    var body = 'setcompiler=' + encodeURIComponent(setCompiler.value) 
+         +'&optimization=' + encodeURIComponent(optimization.value)
+         +'&code_page=' + encodeURIComponent(codePage.value)
+         +'&text_box=' + encodeURIComponent(editAreaLoader.getValue("codebox"));
     //создаем запрос
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'compile.php', true);
@@ -42,9 +46,9 @@ function sendToCompile(){
 
 function loadHello(){
     //загружаем в редактор текст программы Hello world
-    var s='#include <stdio.h>\n\n';
-    s+='int main (void){\n';
-    s+='\tprintf ("Hello, World!\\n");\n';
-    s+='\tgetchar ();\n\treturn 0;\n}\n';
+    var s='#include <stdio.h>\n\n'
+    +'int main (void){\n'
+    +'\tprintf ("Hello, World!\\n");\n'
+    +'\tgetchar ();\n\treturn 0;\n}\n';
     editAreaLoader.setValue("codebox", s);
 }

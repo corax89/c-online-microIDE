@@ -30,11 +30,13 @@ html, body {
 
 #panel select{
     width: 100%;
+    height: 27px;
+    font-size: 13px;
 }
 
 #panel span{
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 100%;
     text-align: center;
@@ -54,6 +56,7 @@ html, body {
 	float: left;
 	padding: 0;
 	text-align: left;
+	transition: all, 0.5s;
 }
 
 .sep{
@@ -84,6 +87,7 @@ html, body {
 	float: left;
 	padding: 0;
 	text-align: center;
+	transition: all, 0.5s;
 }
 
 .pbutton-big>img{
@@ -96,6 +100,7 @@ html, body {
     width: 100%;
     top: 105px;
     bottom: 140px;
+    transition: all, 0.5s;
 }
 
 #codebox{
@@ -110,6 +115,7 @@ html, body {
     right: -8px;
     border: none;
     padding: 3px;
+    transition: all, 0.5s;
 }
 
 #output-text{
@@ -132,6 +138,10 @@ html, body {
     
     .minipanel{
     	width: 106px;
+    }
+    
+    #panel span{
+        font-size:8px;
     }
     
     .sep{
